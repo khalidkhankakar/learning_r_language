@@ -1,0 +1,2 @@
+1. simple bar chart
+2. pie chart
