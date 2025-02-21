@@ -1,5 +1,5 @@
 # importing and reading the csv file data
-getwd() # check the current dir
+getwd() # check the current working directory
 
 library(dplyr)
 car_data = read.csv('./my DV/car.csv')
