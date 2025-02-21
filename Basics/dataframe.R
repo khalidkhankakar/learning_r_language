@@ -8,7 +8,10 @@ df <- data.frame(
 )
 df
 
-print(df$name)
+newDf = subset(df, name == 'Khalid')
+newDf
+
+newDfprint(df$name)
 print(df['Age'])
 print(df[['Age']])
 print(df$name[1])
@@ -63,3 +66,39 @@ merge_df1_df2
 print(as.matrix(df1))
 print(as.list(df1))
 print(unlist(df))
+
+library(dplyr)
+
+# Creating a dataframe
+df = data.frame(
+  "Name" = c("Amiya", "Raj", "Asish"),
+  "Language" = c("R", "Python", "Java"),
+  "Age" = c(22, 25, 45)
+)
+cat("Original Dataframe\n")
+print(df)
+
+# Creating an extra variable column
+# "log_Age" which is log of variable column "Age"
+# Using mutate() command
+newDf = mutate(df, log_Age = log(Age))
+
+cat("After creating extra variable column\n")
+print(newDf)
+
+
+
+# Creating a Data Frame 
+df<-data.frame(row1 = 0:2, row2 = 3:5, row3 = 6:8) 
+print("Original Data Frame") 
+print(df) 
+print("Modified Data Frame") 
+
+# Renaming Data Frame 
+rename(df, c("row1"="one", "row2"="two", "row3"="three")) 
+colnames(df) <- c("Brand", "Model", "Price")
+df
+
+
+
+
