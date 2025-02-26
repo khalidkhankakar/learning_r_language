@@ -73,3 +73,39 @@ while (i <= n)
   i = i + 1
 }
 print(factorial)
+
+
+
+
+# ---------------
+
+val = 1
+repeat
+{
+  val = val + 1
+  print(paste('current value', val))
+  if(val > 5)
+  {
+    break
+  }
+}
+
+
+i <- 0
+
+repeat
+{
+  
+  print("Kakar 4 Kakar!")
+  
+  i = i + 1
+  
+  # checking the stop condition
+  if (i == 5)
+  {
+    # using break statement
+    # to terminate the loop
+    break
+  }
+}
+
