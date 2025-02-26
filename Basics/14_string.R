@@ -20,3 +20,40 @@ print(result)
 
 result <- paste(str1, str2, sep = "-")
 print(result)
+
+# Extracting the substring
+
+text = 'Data Science '
+new_text = substr(text, 1, 4)
+new_text
+
+toupper(text)
+tolower(text)
+
+k = 'Khalid now learning the r language and the will do the best.'
+# Replace the parts of the string: Changing the all occurrence
+gsub('the', '---', k)
+
+# Replace the first occurrence
+t = 'khalid is good and he is great'
+
+sub('is', '???', t)
+
+# split the string
+text <- "apple,banana,grape"
+words <- strsplit(text, ",")
+print(words)
+
+# Using grepl() (Returns TRUE/FALSE
+text <- "Data Science in R"
+grepl("Science", text)
+
+
+words <- c("apple", "banana", "grape", "orange")
+grep("an", words)
+# "an" appears in "banana" (index 2) and "orange" (index 4).
+
+# Formatting the string
+name <- "Khalid"
+age <- 20
+sprintf('My name is %s and I am %s year old', name, age)
