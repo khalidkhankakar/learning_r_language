@@ -47,3 +47,29 @@ for (i in seq_len(nrow(my_dataframe))){
   print(my_dataframe[i,])
 }
 
+
+# -------------------
+
+val = 1
+
+# using while loop
+while (val <= 5)
+{
+  # statements
+  print(val)
+  val = val + 1
+}
+
+
+n <- 5
+
+factorial <- 1
+i <- 1
+
+# using while loop
+while (i <= n)
+{
+  factorial = factorial * i
+  i = i + 1
+}
+print(factorial)
