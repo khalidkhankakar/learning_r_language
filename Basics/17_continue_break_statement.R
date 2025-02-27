@@ -10,7 +10,7 @@ for(i in 1:10){
 # Continue: Skip the current iteration when the certain condition met.
 for(i in 1:10){
   if(i == 5){
-    print(sprintf('Exit the loop when value is %s', i))
+    print(sprintf('Skip the iteration when value is %s', i))
     next
   }
   print(i)
