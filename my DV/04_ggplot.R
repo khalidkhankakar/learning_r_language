@@ -28,3 +28,28 @@ ggplot(data = mtcars, aes(x = hp)) +
   labs(title = "Histogram of Horsepower",
        x = "Horsepower",
        y = "Count")
+
+
+
+
+ggplot(data = mpg)
+
+ggplot(mpg, mapping = aes(x = cty, y= hwy))
+
+
+# ------------------------------------------- basic here
+ggplot(data = mtcars, aes(x = hp, y = mpg, color= factor(cyl))) +
+  geom_point(size=3) +
+  labs(title = "Horsepower vs MPG", x = "Horsepower", y = "Miles per Gallon")
+
+
+# bar chart
+ggplot(data = mtcars , aes(x = factor(cyl), fill = factor(cyl))) +
+  geom_bar() +
+  labs(title = "Car Count by Cylinders", x = "Cylinders", y = "Count")
+
+# line chart
+ggplot(economics, aes(x = date, y = unemploy)) +
+  geom_line() +
+  labs(title = "Unemployment Over Time")
+
