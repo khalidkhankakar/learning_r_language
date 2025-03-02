@@ -48,6 +48,53 @@ starwars %>% select(hair_color:eye_color)
 # Select all columns except those from hair_color to eye_color (exclusive)
 starwars %>% select(!(hair_color:eye_color))
 
-# Select all columns ending with color
+# Select all columns ending with color ::: same for start_with
 starwars %>% select(ends_with('color'))
 
+# rename the variable but it drops all column
+starwars %>% select(HairColor = hair_color )
+
+starwars %>% rename(HairColor = hair_color )
+
+
+# Adding the new columns
+starwars %>% mutate(height_m = height / 100)
+# We can’t see the height in meters we just calculated, but we can fix that using a select command.
+
+starwars %>% 
+  mutate(height_m = height / 100) %>%
+  select(height_m, height, everything())
+
+starwars %>% 
+  mutate(
+    height_m = height/100,
+    BMI = mass / (height_m^2) 
+      ) %>%
+  select(BMI, everything())
+
+
+# taking only new variables
+starwars %>% 
+  mutate(
+    height_m = height/100,
+    BMI = mass / (height_m^2),
+    .keep = 'none'
+  )
+
+# change the column order
+starwars %>% relocate(sex:hair_color,.before = height)
+
+#summarize
+starwars %>% summarise(heigth = mean(height, na.rm= TRUE))
+
+
+a1 <- group_by(starwars, species, sex)
+a1               
+
+
+name <- "color"
+select(starwars, ends_with(name))
+
+
+name <- 5
+select(starwars, name, identity(name))
