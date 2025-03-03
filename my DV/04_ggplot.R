@@ -103,13 +103,31 @@ ggplot(iris, aes(Sepal.Length, Petal.Length,colour =Species )) +
 data(mpg)
 mpg
 
+# jitter plot
 ggplot(mpg, aes(cyl, hwy)) +
   geom_point() +
   geom_jitter(aes(colour = class))
 
+# bar count plot
+ggplot(mpg, aes(x = factor(cyl))) +
+         geom_bar(stat = "count")
 
 
+ggplot(data=mpg, aes(x=hwy)) +
+  geom_histogram(col='red',
+                 fill='green',
+                 alpha=.2,
+                 binwidth = 5)
 
+
+ggplot(mpg, aes(x=class)) +
+  geom_bar(fill = "gray10")  +  # Clean theme
+  labs(title = "Count of Car Classes", x = "Class", y = "Count")
+
+
+ggplot(mpg, aes(x = class, fill = drv)) +
+  geom_bar() +
+  labs(title = "Stacked Bar Chart: Car Class by Drive Type", x = "Class", y = "Count")
 
 
 
