@@ -18,6 +18,4 @@ score=c(23,24,45,67,76,43,65,78,90,43,21)
 qplot(y=score, x="", geom="boxplot", col=I("red"), fill=I("lightblue"),
       ylab="score", main="status score")
 
-data(chickwts)
-str(chickwts)
-# qplot(data=chickwts, x=feed, y=weight, )
+# next lecture
