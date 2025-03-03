@@ -58,3 +58,45 @@ ggplot(economics, aes(x = date, y = unemploy)) +
 data(iris)
 IrisPlot <- ggplot(iris, aes(Sepal.Length, Petal.Length, colour=Species)) + geom_point()
 print(IrisPlot)
+
+print(IrisPlot + labs(x= "Petal lenght cm", x= "Sepal lenght")) +
+  ggtitle('Petal and Sepal lenght of iris')
+
+# Adding the text
+IrisPlot + annotate('text', x=6, y=5, label='Text')
+
+#Repeat that text
+IrisPlot + annotate('text', x=4:6, y=3:5, label='Text')
+
+# highlight the area
+IrisPlot + annotate('rect',xmin=5, xmax=7, ymin=4, ymax=6,alpha=0.3)
+
+# remove the theme 
+IrisPlot + theme(legend.position = "none")
+
+# also can be hide legend title
+IrisPlot + theme(legend.title = element_blank())
+
+IrisPlot + theme(legend.position = "top")
+IrisPlot + theme(legend.position = "bottom")
+
+
+IrisPlot + theme(legend.title = element_text(colour='blue', face = 'bold', size=10))
+IrisPlot + theme(legend.text = element_text(colour='red', face = 'bold', size=10))
+
+
+# Basic of scatter plot
+ggplot(iris, aes(Sepal.Length, Petal.Length)) +
+  geom_point()
+
+# changing the shape
+ggplot(iris, aes(Sepal.Length, Petal.Length,colour =Species )) +
+  geom_point(shape=2)
+
+
+# adding the relationship and remove the shadow , se = FALSE
+ggplot(iris, aes(Sepal.Length, Petal.Length,colour =Species )) +
+  geom_point(shape=2) +
+  geom_smooth(method= lm , se=T)
+
+
