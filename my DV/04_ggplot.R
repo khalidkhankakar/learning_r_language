@@ -34,6 +34,7 @@ ggplot(data = mtcars, aes(x = hp)) +
 
 ggplot(data = mpg)
 
+
 ggplot(mpg, mapping = aes(x = cty, y= hwy))
 
 
@@ -53,3 +54,7 @@ ggplot(economics, aes(x = date, y = unemploy)) +
   geom_line() +
   labs(title = "Unemployment Over Time")
 
+
+data(iris)
+IrisPlot <- ggplot(iris, aes(Sepal.Length, Petal.Length, colour=Species)) + geom_point()
+print(IrisPlot)
