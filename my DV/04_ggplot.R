@@ -100,3 +100,16 @@ ggplot(iris, aes(Sepal.Length, Petal.Length,colour =Species )) +
   geom_smooth(method= lm , se=T)
 
 
+data(mpg)
+mpg
+
+ggplot(mpg, aes(cyl, hwy)) +
+  geom_point() +
+  geom_jitter(aes(colour = class))
+
+
+
+
+
+
+
