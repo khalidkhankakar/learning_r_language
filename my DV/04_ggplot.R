@@ -141,4 +141,21 @@ pieDf
 pieChart = ggplot(pieDf, aes(x='Class', y= 'Frequency', fill = factor(Class))) +  geom_bar(width=1, stat='identity') 
 
 pieChart + coord_polar(theta = 'y', start=0)
+
+
+# Marginal plots
+# Marginal plots has plots on x and y axies
+
+library(ggExtra)
+
+
+gScatter = ggplot(mpg, aes(cty, hwy)) +
+  geom_count()+
+  geom_smooth(method='lm',se=F)
   
+ggMarginal(gScatter, type='histogram', fill ='transparent')
+
+ggMarginal(gScatter, type='boxplot', fill='blue')
+
+ggMarginal(gScatter)
+
