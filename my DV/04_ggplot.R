@@ -131,3 +131,14 @@ ggplot(mpg, aes(x = class, fill = drv)) +
 
 
 
+
+# pie chart
+pieDf = as.data.frame(table(mpg$class))
+colnames(pieDf) = c('Class', 'Frequency')
+pieDf
+
+
+pieChart = ggplot(pieDf, aes(x='Class', y= 'Frequency', fill = factor(Class))) +  geom_bar(width=1, stat='identity') 
+
+pieChart + coord_polar(theta = 'y', start=0)
+  
