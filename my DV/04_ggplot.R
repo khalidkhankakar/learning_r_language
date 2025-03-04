@@ -153,9 +153,22 @@ gScatter = ggplot(mpg, aes(cty, hwy)) +
   geom_count()+
   geom_smooth(method='lm',se=F)
   
+
+ggMarginal(gScatter,margins = 'x', type='histogram', fill ='orange')
+
 ggMarginal(gScatter, type='histogram', fill ='transparent')
 
 ggMarginal(gScatter, type='boxplot', fill='blue')
 
 ggMarginal(gScatter)
 
+
+# Bubbe and Count plots
+
+ggplot(mpg, aes(x=factor(cyl))) +
+  geom_bar(stat= 'count')
+
+ggplot(mpg, aes(x=hwy)) +
+  geom_histogram(col='red', fill='green', alpha=0.3, binwidth = 5)
+
+ggplot(mpg, aes(x=cty, y=hwy)) +geom_point(alpha=0.7)
