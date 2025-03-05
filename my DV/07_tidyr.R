@@ -53,3 +53,36 @@ cleaned_df = df_missing %>% drop_na()
 cleaned_df
 
 
+# Separate and unite 
+names_df = data.frame(
+  full_name = c('khalid kakar', 'Shahzaib khan', 'Mubeen Durrani', 'MI Syed')
+)
+names_df
+
+# separate the names by space 
+separated_names = names_df %>% separate(
+  full_name, 
+  into = c('first_name', 'last_name'),
+  sep= ' '
+)
+separated_names
+
+
+# unite the names 
+unite_names = separated_names %>% unite(
+  'full_name',
+  first_name, 
+  last_name,
+  sep = ' '
+)
+unite_names
+
+
+
+
+
+
+
+
+
+
