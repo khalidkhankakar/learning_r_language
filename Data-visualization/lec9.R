@@ -26,5 +26,6 @@ hist(temprature,
      border='red',
      xlim = c(50,100),
      freq = TRUE,
-     breaks=c(55,60,70,75,80,100)
+     breaks=c(55,60,70,75,80,300)
      )
+
