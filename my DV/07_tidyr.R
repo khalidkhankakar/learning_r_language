@@ -302,3 +302,39 @@ print("Dates after unite() with NA removal:")
 print(dates_na_handled)
 
 
+# Separating
+full_names_df <- data.frame(
+  id = 1:3,
+  full_name = c("John Smith", "Jane Doe", "Robert Johnson")
+)
+
+print("Original full names:")
+print(full_names_df)
+
+names_separated = full_names_df %>% separate(
+  col = full_name,
+  into = c('first_name', 'last_name'),
+  sep = ' '
+)
+
+names_separated
+
+
+mixed_data <- data.frame(
+  id = 1:3,
+  date_info = c("2022-05-15", "2023/06/21", "2022.12.07")
+)
+
+print("Mixed date formats:")
+print(mixed_data)
+
+dates_separated = mixed_data %>% separate(
+  col = date_info,
+  into = c('year', 'month', 'day'),
+  sep = '[\\-\\/\\.]'
+)
+
+dates_separated
+
+
+
