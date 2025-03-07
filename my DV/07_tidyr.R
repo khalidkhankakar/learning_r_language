@@ -193,3 +193,112 @@ time_series <- all_metrics %>%
 
 print("Time series format:")
 print(time_series)
+
+
+
+student_scores <- data.frame(
+  student_id = rep(1:3, each = 4),
+  semester = rep(c("Fall_2022", "Spring_2023"), each = 2, times = 3),
+  test_type = rep(c("Midterm", "Final"), times = 6),
+  math_score = sample(70:100, 12),
+  science_score = sample(70:100, 12)
+)
+
+print("Original student scores:")
+print(student_scores)
+
+# Multi-step transformation
+final_result <- student_scores %>%
+  # Step 1: Make all scores in one column
+  pivot_longer(
+    cols = ends_with("_score"),
+    names_to = "subject",
+    values_to = "score",
+    names_pattern = "(.+)_score"
+  ) %>%
+  # Step 2: Split the semester column
+  separate(
+    semester,
+    into = c("term", "year"),
+    sep = "_"
+  ) %>%
+  # Step 3: Create a unique test identifier
+  unite(
+    "test_id",
+    test_type, term, year,
+    sep = "_"
+  ) %>%
+  # Step 4: Pivot to wide format with tests as columns
+  pivot_wider(
+    id_cols = c(student_id, subject),
+    names_from = test_id,
+    values_from = score
+  )
+
+print("Final transformed data:")
+print(final_result)
+
+
+# Understanding Cell Splitting and Combining Functions in tidyr
+
+names_df = data.frame(
+  first_name = c("John", "Jane", "Robert"),
+  last_name = c("Smith", "Doe", "Johnson")
+)
+print("Original names data:")
+print(names_df)
+
+
+full_names = names_df  %>% unite(
+  col = 'full_name',
+  first_name,
+  last_name,
+  sep=' '
+)
+full_names
+
+
+# ---------- Unite with multiple columns ----------
+# Create data with date components
+dates_df <- data.frame(
+  id = 1:3,
+  year = c(2022, 2023, 2022),
+  month = c(5, 6, 12),
+  day = c(15, 21, 7)
+)
+print("Original date components:")
+print(dates_df)
+
+dates_united = dates_df %>% unite(
+  col = 'date',
+  year,
+  month,
+  day,
+  sep='/'
+)
+
+dates_united
+
+dates_with_na <- data.frame(
+  id = 1:3,
+  year = c(2022, 2023, 2022),
+  month = c(5, NA, 12),
+  day = c(15, 21, NA)
+)
+
+print("Date components with NAs:")
+print(dates_with_na)
+
+# Unite with NA handling
+dates_na_handled <- dates_with_na %>%
+  unite(
+    "date", 
+    year, month, day, 
+    sep = "-",
+    na.rm = TRUE              # Remove NA values
+  )
+
+print("Dates after unite() with NA removal:")
+print(dates_na_handled)
+
+
