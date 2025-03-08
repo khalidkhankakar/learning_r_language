@@ -462,3 +462,50 @@ df_clean_multiple <- df %>% drop_na(name, score)
 print(df_clean_multiple)
 
 
+# Working with grouped data
+library(tibble)
+
+students <- tibble(
+  class = rep(c("A", "B", "C"), each = 3),
+  student = letters[1:9],
+  math = c(85, NA, 90, 82, 79, NA, 88, 91, 87),
+  science = c(88, 76, NA, NA, 82, 84, 90, 88, NA)
+)
+
+# Drop NA values within each group and calculate mean scores
+students %>%
+  group_by(class) %>%
+  drop_na() %>%
+  summarise(
+    math_avg = mean(math),
+    science_avg = mean(science)
+  )
+
+# fill in tidyr
+
+# Create a dataframe with missing values
+sales <- tibble(
+  quarter = c(1, 2, 3, 4),
+  revenue = c(100, NA, 120, NA)
+)
+
+# Fill missing values with previous non-NA value (down)
+sales_filled_down <- sales %>% fill(revenue)
+print(sales_filled_down)
+
+
+# Fill in both directions
+temperature <- tibble(
+  day = 1:7,
+  temp = c(22, NA, NA, 25, NA, 23, NA)
+)
+
+# Fill upward (using values from below)
+temp_up <- temperature %>% fill(temp, .direction = "up")
+print(temp_up)
+
+# Fill both directions
+temp_both <- temperature %>% 
+  fill(temp, .direction = "down") %>%
+  fill(temp, .direction = "up")
+print(temp_both)
