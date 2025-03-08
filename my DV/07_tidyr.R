@@ -436,3 +436,29 @@ visits_complete <- visits_data %>%
 
 print("Visits data after nested complete:")
 print(visits_complete)
+
+
+# drop_na
+library(tidyr)
+library(dplyr)
+
+# Create a sample dataframe
+df <- tibble(
+  id = 1:5,
+  name = c("Alice", "Bob", NA, "Dave", "Eve"),
+  score = c(85, 92, 78, NA, 88)
+)
+
+# Remove all rows with any NA values
+df_clean <- df %>% drop_na()
+print(df_clean)
+
+# Remove rows with NA only in specific columns
+df_clean_name <- df %>% drop_na(name)
+print(df_clean_name)
+
+# Remove rows with NA in multiple specific columns
+df_clean_multiple <- df %>% drop_na(name, score)
+print(df_clean_multiple)
+
+
