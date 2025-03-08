@@ -373,3 +373,66 @@ dates_products <- expand(
 print("Grid of dates and products:")
 print(dates_products)
 
+
+# complete
+incomplete_data <- data.frame(
+  country = c("USA", "USA", "Canada", "Canada"),
+  year = c(2020, 2021, 2020, 2022),
+  sales = c(100, 110, 90, 95)
+)
+
+print("Incomplete data:")
+print(incomplete_data)
+
+# Complete the missing combinations
+completed_data <- incomplete_data %>%
+  complete(country, year)
+
+print("Data after complete():")
+print(completed_data)
+
+
+
+filled_data <- incomplete_data %>%
+  complete(
+    country, 
+    year, 
+    fill = list(sales = 0)  # Fill missing sales with 0
+  )
+
+print("Data completed with fill:")
+print(filled_data)
+
+# ---------- complete() with explicit values ----------
+# Specify exact values to complete with
+explicit_complete <- incomplete_data %>%
+  complete(
+    country = c("USA", "Canada", "Mexico"),  # Add Mexico
+    year = 2020:2022  # Ensure all three years
+  )
+
+print("Data with explicit complete values:")
+print(explicit_complete)
+
+
+visits_data <- data.frame(
+  user_id = c(1, 1, 2, 3),
+  device = c("mobile", "desktop", "mobile", "mobile"),
+  visit_date = as.Date(c("2023-01-01", "2023-01-02", "2023-01-01", "2023-01-03")),
+  page_views = c(5, 8, 3, 7)
+)
+
+print("Original visit data:")
+print(visits_data)
+
+# Complete with nesting - only create combinations that make sense
+# Here we only want to complete dates for existing user-device combinations
+visits_complete <- visits_data %>%
+  complete(
+    nesting(user_id, device),  # Only existing user-device pairs
+    visit_date = seq(as.Date("2023-01-01"), as.Date("2023-01-03"), by = "day"),
+    fill = list(page_views = 0)
+  )
+
+print("Visits data after nested complete:")
+print(visits_complete)
