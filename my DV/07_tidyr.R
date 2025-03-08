@@ -336,5 +336,40 @@ dates_separated = mixed_data %>% separate(
 
 dates_separated
 
+# Expand 
+fruits <- c("apple", "banana", "orange")
+sizes <- c("small", "medium", "large")
 
+# Generate all combinations
+fruit_sizes <- expand(data.frame(), fruit = fruits, size = sizes)
+
+print("All combinations of fruits and sizes:")
+print(fruit_sizes)
+
+
+sales <- data.frame(
+  product = c("A", "B", "A", "C"),
+  size = c("small", "medium", "large", "small"),
+  sales = c(10, 15, 20, 5)
+)
+
+print("Original sales data:")
+print(sales)
+
+# Generate all combinations from existing data
+all_combinations <- sales %>%
+  expand(product, size)
+
+print("All combinations from sales data:")
+print(all_combinations)
+
+
+dates_products <- expand(
+  data.frame(),
+  date = seq(as.Date("2023-01-01"), as.Date("2023-01-05"), by = "day"),
+  product = c("Widget", "Gadget", "Doodad")
+)
+
+print("Grid of dates and products:")
+print(dates_products)
 
