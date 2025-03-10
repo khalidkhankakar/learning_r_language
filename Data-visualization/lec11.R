@@ -21,7 +21,7 @@ polygon(d, col='blue', border='yellow')
 
 library(ggplot2)
 library(dplyr)
-# library(hrbrthemes)
+library(hrbrthemes)
 
 data = data.frame(
   type=c(rep('variable1', 1000), rep('variable2', 1000)),
