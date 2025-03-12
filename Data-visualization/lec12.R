@@ -51,12 +51,8 @@ curve(dnorm(x), add=T)
 lines(density(rnorm(100)), lty=1)
 
 m = seq(0,60,10)
-m
 u = seq(10, 70, 10)
-u
 mid = (m+u)/2
-mid
 f =c(4,8,10,13,9,3,5)
 X = rep(mid, f)
-X
 hist(X)

@@ -37,16 +37,6 @@ n = data %>%
   theme_classic()+
   labs(fill='')
 n  
-  
-attach(mtcars)
-par(mfrow=c(1,2))
-hist(mtcars$mpg)
-hist(mtcars$mpg,prob=1)
 
-hist(mtcars$mpg,prob=T, ylim = c(0, 0.07))
-lines(density(mtcars$mpg, na.rm=T), col='red', lwd=3)
-curve(dnorm(x, mean=mean(mtcars$mpg, na.rm = T),
-            sd=sd(mtcars$mpg,na.rm=T)),
-          add=T, col='blue', lwd=1)
 
 
