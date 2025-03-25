@@ -53,7 +53,7 @@ print(as.data.frame(arr1[,,1]))
 
 
 vector1 <- c(5, 9, 3) 
-vector2 <- c(10, 11, 12, 13, 14, 15) 
+vector2 <- c(10, 75, 12, 13, 14, 43) 
 column.names <- c("COL1", "COL2", "COL3") 
 row.names <- c("ROW1", "ROW2", "ROW3") 
 matrix.names <- c("Matrix1", "Matrix2") 
