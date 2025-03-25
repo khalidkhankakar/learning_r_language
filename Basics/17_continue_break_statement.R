@@ -8,7 +8,7 @@ for(i in 1:10){
 }
 
 # Continue: Skip the current iteration when the certain condition met.
-for(i in 1:10){
+for(i in 1:100){
   if(i == 5){
     print(sprintf('Skip the iteration when value is %s', i))
     next
