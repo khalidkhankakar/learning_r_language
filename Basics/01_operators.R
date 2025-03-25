@@ -1,6 +1,6 @@
 # Arithematic Operators 
-num1 <- 12
-num2 <- 10
+num1 <- 24
+num2 <- 23
 
 print(num1 + num2)
 
