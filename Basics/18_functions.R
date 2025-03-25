@@ -2,22 +2,14 @@
 ages_of_class_stu = c(12,23,34,64,23,33)
 sum(ages_of_class_stu)
 
-<<<<<<< HEAD
-# User defined functions
-=======
-# User defined funcitons
->>>>>>> 916c373a63c2c87f6ab3b417ff7e673525c190ad
+
 add_numbers = function(a,b){
   sum = a + b
   return(sum)
 }
 add_numbers(12,12)
 
-<<<<<<< HEAD
-# Default argument
-=======
-# Defualt argument
->>>>>>> 916c373a63c2c87f6ab3b417ff7e673525c190ad
+
 greet <- function(user = 'User'){
   print(paste('Hello', user, '!'))
 }
