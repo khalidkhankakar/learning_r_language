@@ -9,11 +9,11 @@ hist(mtcars$mpg,prob=T)
 
 hist(mtcars$mpg,prob=T, ylim = c(0, 0.07))
 
-lines(density(mtcars$mpg, na.rm=T), col='red', lwd=3)
+lines(density(mtcars$mpg, na.rm=T), col='cyan', lwd=3)
 
 curve(dnorm(x, mean=mean(mtcars$mpg, na.rm = T),
             sd=sd(mtcars$mpg,na.rm=T)),
-      add=T, col='blue', lwd=1)
+      add=T, col='purple', lwd=1)
 
 
 library(rcompanion)

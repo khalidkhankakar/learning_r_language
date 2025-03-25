@@ -2,7 +2,7 @@ summary(mtcars)
 
 x = mtcars$mpg
 
-h = hist(mtcars$mpg,col = 'purple')
+h = hist(mtcars$mpg,col = 'red')
 xfit = seq(min(x), max(x), length= 40)
 xfit
 yfit = dnorm(xfit, mean= mean(x), sd= sd(xfit))
