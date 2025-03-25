@@ -11,7 +11,7 @@ add_numbers(12,12)
 
 
 greet <- function(user = 'User'){
-  print(paste('Hello', user, '!'))
+  print(paste('Hi there', user, '!'))
 }
 greet("khalid")
 greet()
