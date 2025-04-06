@@ -34,3 +34,4 @@ text(h$mids, h$counts, labels = h$counts, adj = c(0.5, -0.5))
 hist(home_data$price, breaks = "Sturges", main = "Sturges Rule")
 hist(home_data$price, breaks = "Scott", main = "Scott Rule")
 hist(home_data$price, breaks = "FD", main = "Freedman–Diaconis Rule")
+
