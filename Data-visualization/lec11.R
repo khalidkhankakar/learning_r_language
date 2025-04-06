@@ -10,7 +10,7 @@ yfit = dnorm(xfit, mean= mean(x), sd= sd(xfit))
 yfit
 
 yfit= yfit * diff(h$mids[1:2]) * length(x)
-
+yfit
 lines(xfit, yfit, col='yellow', lwd=3)
 
 
@@ -38,7 +38,6 @@ n = data %>%
   scale_fill_manual(values = c('green', 'blue')) +
   theme_classic()+
   labs(fill='')
-n  
-
+n
 
 

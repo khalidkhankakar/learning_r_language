@@ -26,3 +26,23 @@ pie3D(x,
       explode =0.2,
       )
 # Task: How to explode just one slice from the 3d pie chart
+
+library(plotrix)
+
+x = c(10,23,45,64)
+pieLabels = c('khalid','fahad', 'ahmad', 'kakar')
+
+# Only explode the 2nd slice (e.g., "fahad")
+explode_vec = c(0, 0.2, 0, 0)
+
+pie3D(x,
+      labels = pieLabels,
+      explode = explode_vec,
+      col = rainbow(4),
+      main = "3D Pie Chart with Exploded Slice",
+      labelcol = 'blue',
+      border = 'black',
+      height = 0.1,
+      theta = 1.2
+)
+

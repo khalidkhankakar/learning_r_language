@@ -23,3 +23,4 @@ qplot(y=score, x="", geom="boxplot", col=I("red"), fill=I("lightblue"),
       ylab="score", main="status score")
 
 # next lecture
+

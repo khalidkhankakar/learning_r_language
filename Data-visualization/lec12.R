@@ -28,6 +28,7 @@ library(rcompanion)
 x = c(rnorm(1000))
 x
 
+
 plotNormalHistogram(x,
                     prob=T,
                     main='normal distribution',
@@ -47,6 +48,7 @@ plotNormalHistogram(x,
 
 curve(expr = sin, from=0,to=6 * pi)
 curve(x^2-10 *x, from=1, to =10)
+curve(expr = cos, from=1, to=10)
 
 data2 = c(2,3,5,6,3,5,5,3,3)
 plot(data2)

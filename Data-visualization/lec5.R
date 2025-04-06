@@ -5,7 +5,7 @@ x2 = c('khalid', 'khan', 'kakar', 'fahad', 'Ahmad')
 
 barplot(x1, names.arg = x2, xlab = 'Boys', ylab = 'Power',
         col = heat.colors(5), main = 'Friends',
-        cex.main=5, cex.lab=1, cex.axis= 3)
+        cex.main=2, cex.lab=1, cex.axis= 1)
 
 text(
   x=barplot(x1,
@@ -15,7 +15,7 @@ text(
   y=x1,
   label=x1,
   pos=1, 
-  cex=1.5, 
+  cex=1, 
   col='blue')
 
 library(ggplot2)

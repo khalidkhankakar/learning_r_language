@@ -29,7 +29,7 @@ print(pd)
 # explodeDonut = 1
 # r0 = 0.4, r1 = 0.9,r2 = .7 is used for radius
 PieDonut(pd,
-         aes(Class, Survived,count=n),
+         aes(Class, Survived, count=n),
          title = 'Titanic surivied by Class',
          explode = 1,
          ratioByGroup = F)

@@ -2,7 +2,7 @@ data = matrix(c(2,3,4,3,4,3,9,21,4,3,3,6,4,4,7), nrow=3, ncol=5, byrow = TRUE)
 colors = c('cyan', 'green', 'blue')
 month = c('Jan', 'Feb', 'Mar', 'Apr', 'May')
 
-# component chart
+
 barplot(data, beside = TRUE, col = colors, names.arg = month, main = 'Component Chart', xlab = 'Month', ylab = 'Value',border = 'red')
 
 
