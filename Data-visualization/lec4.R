@@ -30,17 +30,7 @@ data_1 = iris[ , 1:4]
 print(data_1)
 head(data_1)
  data_1 %>% 
-  gather(key='MeasureType',value = 'val' ) %>%
-  ggplot(aes(x=MeasureType, y=val ), fill(MeasureType)) + geom_violin()
+  gather(key='MeasureType',value = 'val' )  %>%
+   ggplot(aes(x=MeasureType, y=val, fill=MeasureType)) + geom_violin()
 
-# data_1 <- iris[, 1:4] %>%
-#   pivot_longer(cols = everything(), names_to = "MeasureType", values_to = "Val")
-# 
-# # Create the violin plot
-# ggplot(data_1, aes(x = MeasureType, y = Val, fill = MeasureType)) +
-#   geom_violin() +
-#   labs(title = "Violin Plot of Iris Measurements",
-#        x = "Measurement Type",
-#        y = "Value") +
-#   theme_minimal()
 

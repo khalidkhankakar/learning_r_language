@@ -25,6 +25,7 @@ tail(data)
 pd = data %>% group_by(Class, Survived) %>% summarise(n=sum(Freq))
 print(pd)
 
+
 # explodeDonut = 1
 # r0 = 0.4, r1 = 0.9,r2 = .7 is used for radius
 PieDonut(pd,
