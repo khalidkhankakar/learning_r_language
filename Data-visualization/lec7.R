@@ -5,12 +5,16 @@ y3 = c(12,3,4,5,7,3,2,5,3,7)
 colors = c('blue', 'cyan','red', 'purple', 'yellow', 'green', 'orange', 'white', 'gray','brown')
 
 data = data.frame(y1,y2,y3)
+data
+mat = as.matrix(data)
+mat
+barplot(mat, main = 'Component bar chart', ylab='Count',xlab='Colors', beside=FALSE, col=colors)
 
-barplot(as.matrix(data), main = 'Component bar chart', ylab='Count',xlab='Colors', beside=FALSE, col=rainbow(10))
-
+barplot(c(2,3,5,6,7))
 
 # ASSIGNMENT:- show numeric labels on component bar chart and auto colors schem
 # barplot(as.matrix(data),names.arg =  , main = 'Component bar chart', ylab='Count',xlab='Colors', beside=FALSE, col=heat.colors(10), legend=rownames(data), args.legend=list(title='Colors', x='topright', cex=0.8, bty='n'))
+
 
 
 library(tidyverse)

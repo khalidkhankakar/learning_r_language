@@ -1,27 +1,35 @@
 library(ggplot2)
 library(dplyr)
+
 library(hrbrthemes)
 
 attach(mtcars)
 par(mfrow=c(1,2))
 hist(mtcars$mpg)
+
 hist(mtcars$mpg,prob=T)
 
 hist(mtcars$mpg,prob=T, ylim = c(0, 0.07))
 
-lines(density(mtcars$mpg, na.rm=T), col='cyan', lwd=3)
+lines(density(mtcars$mpg, na.rm=T), col='red', lwd=3)
 
-curve(dnorm(x, mean=mean(mtcars$mpg, na.rm = T),
-            sd=sd(mtcars$mpg,na.rm=T)),
-      add=T, col='purple', lwd=1)
+curve(
+  dnorm(x,
+        mean = mean(mtcars$mpg, na.rm = T),
+        sd = sd(mtcars$mpg,na.rm=T)),
+  add=T,
+  col='purple',
+  lwd=1)
+
 
 
 library(rcompanion)
+
 x = c(rnorm(1000))
 x
 
 plotNormalHistogram(x,
-                    prob=F,
+                    prob=T,
                     main='normal distribution',
                     length = 1000)
 
@@ -51,8 +59,13 @@ curve(dnorm(x), add=T)
 lines(density(rnorm(100)), lty=1)
 
 m = seq(0,60,10)
+m
 u = seq(10, 70, 10)
+u
 mid = (m+u)/2
+mid
 f =c(4,8,10,13,9,3,5)
 X = rep(mid, f)
+X
 hist(X)
+

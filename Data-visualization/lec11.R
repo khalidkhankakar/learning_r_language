@@ -1,5 +1,6 @@
 summary(mtcars)
 
+
 x = mtcars$mpg
 
 h = hist(mtcars$mpg,col = 'red')
@@ -14,6 +15,7 @@ lines(xfit, yfit, col='yellow', lwd=3)
 
 
 d = density(mtcars$mpg)
+d
 plot(d, main='kernel density')
 
 polygon(d, col='blue', border='yellow')
@@ -32,7 +34,7 @@ data[1700:2000, ]
 
 n = data %>% 
   ggplot(aes(x=values, fill = type)) +
-  geom_histogram(color='gray', alpha=0.6, position='identity')+
+  geom_histogram(color='gray', alpha=0.6, position='identity') +
   scale_fill_manual(values = c('green', 'blue')) +
   theme_classic()+
   labs(fill='')

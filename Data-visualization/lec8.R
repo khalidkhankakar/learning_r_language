@@ -1,11 +1,13 @@
 library(tidyverse)
-# view(chickwts) # display the chickwts data
+view(chickwts) # display the chickwts data
 data(chickwts)
 str(chickwts)
+
 qplot(data=chickwts, x=feed, y=weight,geom = 'boxplot' , fill= feed)
 
 data(airquality)
 str(airquality)
+airquality$Ozone
 boxplot(airquality$Ozone)
 
 # Horizontal boxplot
@@ -27,6 +29,8 @@ temp = airquality$Temp
 ozone_norm = rnorm(200, mean= mean(ozone, na.rm= TRUE), sd= sd(ozone, na.rm= TRUE))
 temp_norm = rnorm(200, mean= mean(temp, na.rm= TRUE), sd= sd(temp, na.rm= TRUE))
 
+ozone_norm
+temp_norm
 boxplot(ozone,ozone_norm,temp, temp_norm, 
         main= 'Ozone and Temp distribution',
         at= c(1,2,4,5),
@@ -48,3 +52,4 @@ boxplot(Temp ~ Month,
         notch=TRUE,
         border='purple'
         )
+

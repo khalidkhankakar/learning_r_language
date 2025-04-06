@@ -1,5 +1,6 @@
 library(tidyverse)
 temprature = airquality$Temp
+temprature
 hist(temprature)
 
 
@@ -9,12 +10,12 @@ hist(temprature,
      ylab='Frequency',
      col = c('blue'),
      xlim = c(50,100),
-     freq = TRUE
+     freq = T
      )
 
 
-hist(temprature, ylim=c(0,35))
-text(himids, hicounts, labels=hicounts, adj=c(0.5, -0.5))
+h =hist(temprature, ylim=c(0,35))
+text(h$mids, h$counts, labels=h$counts, adj=c(0.5, -0.5))
 
 hist(temprature, ylim=c(0,35), breaks=20)
 

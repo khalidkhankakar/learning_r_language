@@ -2,10 +2,11 @@
 x = c(10,23,45,64)
 pieLabels = c('khalid','fahad', 'ahmad', 'kakar')
 myColors = c('red', 'yellow', 'green', 'blue')
-# pie(x,labels = pieLabels, main='My Pie chart',col = myColors, init.angle = 45)
+pie(x,labels = pieLabels, main='My Pie chart',col = myColors, init.angle = 90)
+
 
 # legend
-legend('bottomright', pieLabels, fill = myColors)
+legend('topright', pieLabels, fill = myColors)
 
 library(plotrix)
 
@@ -16,13 +17,12 @@ pie3D(x)
 # theta = 2,
 pie3D(x,
       height = 0.1,
-      theta = 1,
+      theta = 1.2,
       col = rainbow(4),
       border= 'green',
       labels = pieLabels,
       labelcol = 'blue',
       mar = c(1,1,1,1),
-      explode = c(.2),
+      explode =0.2,
       )
-
 # Task: How to explode just one slice from the 3d pie chart

@@ -5,19 +5,21 @@ barplot(x, xlab = 'Audience', ylab = 'Count',
         col = "blue", col.axis='red', col.lab='purple')
 
 
-# Horizontal ar chart
+# Horizontal bar chart
 barplot(x, xlab = 'Count', ylab = 'Audience', 
         col = "blue", col.axis='red', col.lab='purple',
         horiz = TRUE)
+
 
 x1 = c(12,34,54,23,21)
 x2 = c('khalid', 'khan', 'kakar', 'fahad', 'Ahmad')
 
 # cex.main=1.5, cex.lab=.1, cex.axis= 1 used for different font sizes
 
-barplot(x1, names.arg = x2, xlab = 'Boys', ylab = 'Power',
+barplot(x1,
+        names.arg = x2, xlab = 'Boys', ylab = 'Power',
         col = heat.colors(5), main = 'Friends',
-        cex.main=1.5, cex.lab=.1, cex.axis= 1)
+        cex.main=2, cex.lab=1, cex.axis= 2)
 
 
 library(tidyr)
@@ -26,6 +28,7 @@ library(dplyr)
 
 data_1 = iris[ , 1:4]
 print(data_1)
+head(data_1)
  data_1 %>% 
   gather(key='MeasureType',value = 'val' ) %>%
   ggplot(aes(x=MeasureType, y=val ), fill(MeasureType)) + geom_violin()

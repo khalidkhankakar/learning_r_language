@@ -13,6 +13,8 @@ plot_pois_pmf=function(mu){
   abline(v=mu_x,col="red",lwd=2)
 }
 n=100
+
+
 values=c(0.5,1,5,8,20,50)
 par(mfrow=c(3,2))
 for (mu in values) {
