@@ -3,17 +3,11 @@ num1 <- 24
 num2 <- 23
 
 print(num1 + num2)
-
 print(num1 - num2)
-
 print(num1 * num2)
-
 print(num1 / num2)
-
 print(num1 %% num2)
-
 print(num1 ^ num2)
-
 print(num1 %/% num2)
 
 # Reational (comparision) Operators 
