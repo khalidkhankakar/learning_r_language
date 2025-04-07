@@ -29,6 +29,7 @@ temp = airquality$Temp
 ozone_norm = rnorm(200, mean= mean(ozone, na.rm= TRUE), sd= sd(ozone, na.rm= TRUE))
 temp_norm = rnorm(200, mean= mean(temp, na.rm= TRUE), sd= sd(temp, na.rm= TRUE))
 
+
 ozone_norm
 temp_norm
 boxplot(ozone,ozone_norm,temp, temp_norm, 

@@ -14,7 +14,7 @@ hist(temprature,
      )
 
 
-h =hist(temprature, ylim=c(0,35))
+h = hist(temprature, ylim=c(0,35))
 text(h$mids, h$counts, labels=h$counts, adj=c(0.5, -0.5))
 
 hist(temprature, ylim=c(0,35), breaks=20)

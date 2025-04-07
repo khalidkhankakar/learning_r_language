@@ -3,7 +3,7 @@ colors = c('cyan', 'green', 'blue')
 month = c('Jan', 'Feb', 'Mar', 'Apr', 'May')
 
 
-barplot(data, beside = T, col = colors, names.arg = month, main = 'Component Chart', xlab = 'Month', ylab = 'Value',border = 'red')
+barplot(data, beside = F, col = colors, names.arg = month, main = 'Component Chart', xlab = 'Month', ylab = 'Value',border = 'red')
 
 
 regions = c('North', 'South', 'East')
