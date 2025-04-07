@@ -7,6 +7,7 @@ barplot(x1, names.arg = x2, xlab = 'Boys', ylab = 'Power',
         col = heat.colors(5), main = 'Friends',
         cex.main=2, cex.lab=1, cex.axis= 1)
 
+
 text(
   x=barplot(x1,
             names.arg =x2, 

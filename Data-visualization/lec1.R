@@ -9,6 +9,8 @@ plot(x,y)
 plot(c(3,4,5),c(2,4,6))
 
 plot(1:29)
+
+
 plot(-1:-29)
 
 #properities
