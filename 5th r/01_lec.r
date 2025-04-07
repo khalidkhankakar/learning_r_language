@@ -7,9 +7,10 @@ png('01_lec.png', width = 800, height = 600)
 # plot(x,y,col='red',main='My Plot',xlab='x axis',ylab='y axis',type='l',lwd=3)
 
 # Sample data
-# x1 <- rnorm(10)
-# y2 <- rnorm(10)
-
+x1 <- rnorm(10)
+y2 <- rnorm(10)
+x1
+y2
 # Scatter plot
 # plot(x1, y2, col = "darkgreen",cex=4, main = "Scatter Plot",xlab = "X-axis", ylab = "Y-axis", pch = 10)
 
