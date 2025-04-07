@@ -1,6 +1,6 @@
 # Line area chart: A Line Area Chart is a combination of a line chart and a filled area below the line. It is useful for visualizing trends over time while emphasizing the magnitude of values.
 # Sample dataset: Time series data
-time <- seq(1, 10, 1)  # X-axis values
+time <- seq(1, 10, 2)  # X-axis values
 values <- c(10, 15, 12, 18, 20, 22, 25, 30, 28, 35)  # Y-axis values
 
 time
