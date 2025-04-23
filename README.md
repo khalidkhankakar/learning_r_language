@@ -1,1 +1,1 @@
-# Learn Data visualization in *R LANGUAGE*
+# Learn Data visualization in *R language*
