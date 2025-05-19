@@ -1,2 +1,2 @@
-# Learn Data visualization in *R language*
+# Learn R language and Data visualization 
 ---
