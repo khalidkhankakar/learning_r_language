@@ -23,8 +23,6 @@ fig
 
 fig = fig %>% add_trace(y = ~y2, name = 'sales', marker = list(color = 'rgb(233, 122, 255)'))
 fig
-
-
 fig = fig %>% layout(
   xaxis = list(title = 'Months', tickangle=90),
   yaxis = list(title = 'Value'),

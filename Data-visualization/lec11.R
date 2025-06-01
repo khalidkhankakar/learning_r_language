@@ -1,6 +1,7 @@
 summary(mtcars)
 
 
+
 x = mtcars$mpg
 
 h = hist(mtcars$mpg,col = 'red')
